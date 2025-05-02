@@ -3,72 +3,57 @@ return {
   event = "VeryLazy",
   opts = {
     preset = "classic",
+    layout = {
+      height = { min = 1, max = 10 }, -- Adjust max height to fit content
+      width = { min = 20, max = 50 }, -- Adjust width as needed
+      spacing = 3, -- Adjust spacing between columns
+      align = "center", -- Align content
+    },
+    -- remove presets for windows
+    plugins = {
+      marks = false,
+      registers = false,
+      spelling = false,
+      presets = {
+        operators = false,
+        motions = false,
+        text_objects = false,
+        windows = false,
+        nav = false,
+        z = false,
+        g = false,
+      },
+    },
+
     win = {
-      border = "rounded", -- none, single, double, shadow
       no_overlap = false,
     },
-    defaults = {},
+
     spec = {
+      mode = { "n", "v" },
       {
-        mode = { "n", "v" },
-        {
-          "<leader>;",
-          function()
-            Snacks.dashboard()
-          end,
-          desc = "Dashboard",
-          icon = { icon = "󰡃", color = "cyan" },
-        },
-        { "<leader>w", "<cmd>w<cr>", desc = "Save", icon = { icon = "", color = "cyan" } },
-        {
-          "<leader>c",
-          function()
-            Snacks.bufdelete()
-          end,
-          desc = "Close Buffer",
-          icon = { icon = "", color = "orange" },
-        },
-        {
-          "<leader>h",
-          "<cmd>nohlsearch<cr>",
-          desc = "Remove Highlights",
-          icon = { icon = "", color = "green" },
-        },
-        { "<leader>bx", "<cmd>cclose<cr>", desc = "Close Quickfix", icon = { icon = "󰅚", color = "red" } },
-        { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "󰒲", color = "blue" } },
-        -- move all the LSP stuff under a different letter than the default 'c'
-        { "<leader>l", group = "LSP", icon = { icon = "󰙅", color = "blue" } },
-        {
-          "<leader>lf",
-          function()
-            LazyVim.format({ force = true })
-          end,
-          desc = "Format",
-        },
-        { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-        {
-          "<leader>li",
-          function()
-            Snacks.picker.lsp_config()
-          end,
-          desc = "Lsp Info",
-        },
-        { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
-        { "<leader>lc", vim.lsp.codelens.run, desc = "Run Codelens" },
-        {
-          "<leader>lC",
-          vim.lsp.codelens.refresh,
-          desc = "Refresh & Display Codelens",
-        },
-        {
-          "<leader>lR",
-          function()
-            Snacks.rename.rename_file()
-          end,
-          desc = "Rename File",
-        },
-        { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
-        { "<leader>lA", LazyVim.lsp.action.source, desc = "Source Action" },
+        "<leader>w",
+        "<cmd>w<cr>",
+        desc = "Save",
+        icon = { icon = "", color = "blue" },
+      },
+      {
+        "<leader>e",
+        "<cmd>NvimTreeToggle<cr>",
+        desc = "File Explorer",
+        icon = { icon = "", color = "green" },
+      },
+      {
+        -- IT TURNS OUT you can do this in LazyVim with <leader>ur
+        "<leader>h",
+        "<cmd>nohlsearch<cr>",
+        desc = "No Highlight",
+        icon = { icon = "", color = "red" },
+      },
+      {
+        "<leader><space>",
+        "<esc>",
+        hidden = true,
       },
     },
   },

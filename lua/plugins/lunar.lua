@@ -1,9 +1,9 @@
 return {
-  "LunarVim/lunar.nvim",
+  "lunarvim/lunar.nvim",
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "lunar",
-    },
-  },
+    }
+  }
 }
