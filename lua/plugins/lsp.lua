@@ -11,7 +11,7 @@ return {
         },
       },
       setup = {
-        ["*"] = function(_, opts)
+        ["*"] = function(_, _)
           local keymaps = require("lazyvim.plugins.lsp.keymaps")
           keymaps._keys = require("config.lsp").keys
         end,

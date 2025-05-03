@@ -12,6 +12,11 @@ return {
       {
         mode = { "n", "v" },
         {
+          "<leader>qq",
+          "<cmd>q<cr>",
+          desc = "Quit",
+        },
+        {
           "<leader>;",
           -- stylua: ignore
           function() Snacks.dashboard() end,
@@ -21,8 +26,8 @@ return {
         { "<leader>w", "<cmd>w<cr>", desc = "Save", icon = { icon = "", color = "cyan" } },
         {
           "<leader>c",
-          -- stylua: ignore
-          function() Snacks.bufdelete() end,
+        -- stylua: ignore
+        function() Snacks.bufdelete() end,
           desc = "Close Buffer",
           icon = { icon = "", color = "orange" },
         },
@@ -37,8 +42,8 @@ return {
         -- move some LSP stuff under a different letter than the default 'c'
         -- The rest of it is explained in config.lsp
         { "<leader>l", group = "LSP", icon = { icon = "󰙅", color = "blue" } },
-        -- stylua: ignore
-        { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
+      -- stylua: ignore
+      { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
         { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
       },
     },
