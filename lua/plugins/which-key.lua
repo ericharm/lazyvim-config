@@ -4,7 +4,7 @@ return {
   opts = {
     preset = "classic",
     win = {
-      border = "rounded", -- none, single, double, shadow
+      border = "rounded",
       no_overlap = false,
     },
     defaults = {},
@@ -13,18 +13,16 @@ return {
         mode = { "n", "v" },
         {
           "<leader>;",
-          function()
-            Snacks.dashboard()
-          end,
+          -- stylua: ignore
+          function() Snacks.dashboard() end,
           desc = "Dashboard",
           icon = { icon = "󰡃", color = "cyan" },
         },
         { "<leader>w", "<cmd>w<cr>", desc = "Save", icon = { icon = "", color = "cyan" } },
         {
           "<leader>c",
-          function()
-            Snacks.bufdelete()
-          end,
+          -- stylua: ignore
+          function() Snacks.bufdelete() end,
           desc = "Close Buffer",
           icon = { icon = "", color = "orange" },
         },
@@ -36,39 +34,12 @@ return {
         },
         { "<leader>bx", "<cmd>cclose<cr>", desc = "Close Quickfix", icon = { icon = "󰅚", color = "red" } },
         { "<leader>L", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "󰒲", color = "blue" } },
-        -- move all the LSP stuff under a different letter than the default 'c'
+        -- move some LSP stuff under a different letter than the default 'c'
+        -- The rest of it is explained in config.lsp
         { "<leader>l", group = "LSP", icon = { icon = "󰙅", color = "blue" } },
-        {
-          "<leader>lf",
-          function()
-            LazyVim.format({ force = true })
-          end,
-          desc = "Format",
-        },
+        -- stylua: ignore
+        { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
         { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-        {
-          "<leader>li",
-          function()
-            Snacks.picker.lsp_config()
-          end,
-          desc = "Lsp Info",
-        },
-        { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
-        { "<leader>lc", vim.lsp.codelens.run, desc = "Run Codelens" },
-        {
-          "<leader>lC",
-          vim.lsp.codelens.refresh,
-          desc = "Refresh & Display Codelens",
-        },
-        {
-          "<leader>lR",
-          function()
-            Snacks.rename.rename_file()
-          end,
-          desc = "Rename File",
-        },
-        { "<leader>lr", vim.lsp.buf.rename, desc = "Rename" },
-        { "<leader>lA", LazyVim.lsp.action.source, desc = "Source Action" },
       },
     },
   },

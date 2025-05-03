@@ -10,6 +10,12 @@ return {
           root_dir = require("lspconfig").util.root_pattern("Gemfile", ".git", "."),
         },
       },
+      setup = {
+        ["*"] = function(_, opts)
+          local keymaps = require("lazyvim.plugins.lsp.keymaps")
+          keymaps._keys = require("config.lsp").keys
+        end,
+      },
     },
   },
 }

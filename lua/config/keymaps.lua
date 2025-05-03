@@ -7,9 +7,6 @@ local map = LazyVim.safe_keymap_set
 map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
--- NOTE: I manually commented out several keymaps in the <leader>c group
--- from lazyvim/plugins/lsp/keymaps.lua
--- I could not figure out how else to disable them
 vim.keymap.del("n", "<leader>wd")
 vim.keymap.del("n", "<leader>wm")
 
