@@ -13,5 +13,10 @@ vim.api.nvim_create_autocmd("User", {
       fg = "#7aa2f7",
       bg = "NONE",
     })
+
+    vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", {
+      fg = "#7aa2f7",
+      bg = "NONE",
+    })
   end,
 })
