@@ -9,9 +9,14 @@ return {
       ["<Tab>"] = { "select_next", "fallback" },
       ["<C-k>"] = { "select_prev", "fallback" },
       ["<C-j>"] = { "select_next", "fallback" },
-      ["<C-l>"] = { "accept", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
     },
     completion = {
+      list = {
+        selection = {
+          preselect = false,
+        },
+      },
       menu = {
         border = "rounded",
         winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
