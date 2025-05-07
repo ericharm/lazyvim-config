@@ -1,0 +1,4 @@
+-- vim.api.nvim_set_hl(0, "@property.go", { fg = "#73daca" })
+-- vim.api.nvim_set_hl(0, "@function.method.call.go", { fg = "#c0caf5" })
+-- @variable.go
+-- vim.api.nvim_set_hl(0, "@variable.go", { fg = "#e0af68" })

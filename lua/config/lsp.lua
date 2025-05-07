@@ -15,7 +15,21 @@ M.keys =  {
   { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
   { "K", function() return vim.lsp.buf.hover() end, desc = "Hover" },
   { "gK", function() return vim.lsp.buf.signature_help() end, desc = "Signature Help", has = "signatureHelp" },
-  { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+  {
+    "gl",
+    function()
+      local float = vim.diagnostic.config().float
+
+      if float then
+        local config = type(float) == "table" and float or {}
+        config.scope = "line"
+
+        vim.diagnostic.open_float(config)
+      end
+    end,
+    desc = "Show line diagnostics",
+  },
+  -- { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
   { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
   { "<leader>lc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "v" }, has = "codeLens" },
   { "<leader>lC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
