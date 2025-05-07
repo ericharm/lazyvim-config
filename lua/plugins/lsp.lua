@@ -13,7 +13,7 @@ return {
       setup = {
         ["*"] = function(_, _)
           local keymaps = require("lazyvim.plugins.lsp.keymaps")
-          keymaps._keys = require("config.lsp").keys
+          keymaps._keys = require("config.lsp-remaps")
         end,
       },
     },
