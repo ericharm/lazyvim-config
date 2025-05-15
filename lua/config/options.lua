@@ -4,7 +4,7 @@
 
 local options = {
   relativenumber = false,
-  spell = false,
+  conceallevel = 0,
 }
 
 for k, v in pairs(options) do
