@@ -43,8 +43,18 @@ return {
         -- The rest of it is explained in config.lsp
         { "<leader>l", group = "LSP", icon = { icon = "󰙅", color = "blue" } },
       -- stylua: ignore
-      { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
+        { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
         { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+
+        {
+          "<leader>fj",
+          function()
+            local filename = os.date("!%Y-%m-%dT%H:%M:%SZ.md")
+            vim.cmd("edit " .. filename)
+          end,
+          desc = "Journal Entry",
+          icon = { icon = "", color = "magenta" },
+        },
       },
     },
   },
