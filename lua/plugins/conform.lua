@@ -4,10 +4,10 @@ return {
     { "<leader>cF", false },
   },
   opts = {
-    formatters_by_ft = {
-      python = { "black" },
-      ruby = { "rubocop" },
-      lua = { "stylua" },
-    },
+    autoformat = true,
+    -- formatters_by_ft = {
+    -- javascript = { "eslint_d" },
+    -- typescript = { "eslint_d" },
+    -- },
   },
 }
