@@ -5,9 +5,10 @@ return {
   },
   opts = {
     autoformat = true,
-    -- formatters_by_ft = {
-    -- javascript = { "eslint_d" },
-    -- typescript = { "eslint_d" },
-    -- },
+    formatters_by_ft = {
+      python = { "isort", "black" },
+      -- javascript = { "eslint_d" },
+      -- typescript = { "eslint_d" },
+    },
   },
 }
