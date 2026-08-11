@@ -34,6 +34,18 @@ return {
         -- stylua: ignore
         { "<leader>lf", function() LazyVim.format({ force = true }) end, desc = "Format" },
         { "<leader>ld", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+        {
+          "<leader>sw",
+          -- stylua: ignore
+          function() require("telescope").extensions.telescope_words.search_dictionary_for_word_under_cursor() end,
+          desc = "Dictionary: Word Under Cursor",
+        },
+        {
+          "<leader>sW",
+          -- stylua: ignore
+          function() require("telescope").extensions.telescope_words.search_dictionary() end,
+          desc = "Dictionary: Search Word",
+        },
       },
     },
   },

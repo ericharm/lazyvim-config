@@ -15,7 +15,7 @@ end
 return {
   -- Prevent mason-lspconfig from auto-installing kotlin_language_server
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     opts = {
       automatic_installation = {
         exclude = { "kotlin_language_server" },

@@ -16,6 +16,9 @@ vim.keymap.del("n", "<leader>cd")
 vim.keymap.del("n", "<leader>l")
 vim.keymap.del("n", "<leader>L")
 
+vim.keymap.del("n", "<leader>sw")
+vim.keymap.del("n", "<leader>sW")
+
 vim.keymap.del("n", "<leader>|")
 vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>`")
