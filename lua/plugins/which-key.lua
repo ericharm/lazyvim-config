@@ -11,13 +11,6 @@ return {
     spec = {
       {
         mode = { "n", "v" },
-        {
-          "<leader>;",
-          -- stylua: ignore
-          function() Snacks.dashboard() end,
-          desc = "Dashboard",
-          icon = { icon = "󰡃", color = "cyan" },
-        },
         { "<leader>w", "<cmd>w<cr>", desc = "Save", icon = { icon = "", color = "cyan" } },
         {
           "<leader>c",
@@ -27,11 +20,14 @@ return {
           icon = { icon = "", color = "orange" },
         },
         {
-          "<leader>f?",
-          "<cmd>echo expand('%:p')<cr>",
-          desc = "Where am I?",
-          icon = { icon = "󰈞", color = "yellow" },
+          "<leader>t",
+          -- "<cmd>TermSelect<cr>",
+          group = "Terminals",
+          -- desc = "Terminals",
+          icon = { icon = "", color = "yellow" },
         },
+        { "<leader>tt", "<cmd>TermSelect<cr>", desc = "Select Terminal", icon = { icon = "" } },
+        { "<leader>tn", "<cmd>ToggleTermSetName<cr>", desc = "Set Name", icon = { icon = "󰊄" } },
         -- move some LSP stuff under a different letter than the default 'c'
         -- The rest of it is explained in config.lsp
         { "<leader>l", group = "LSP", icon = { icon = "󰙅", color = "blue" } },

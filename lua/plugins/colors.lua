@@ -1,6 +1,5 @@
 return {
   "LunarVim/lunar.nvim",
-  "KijitoraFinch/nanode.nvim",
   {
     "folke/tokyonight.nvim",
     opts = {

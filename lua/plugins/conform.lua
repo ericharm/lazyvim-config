@@ -6,9 +6,12 @@ return {
   opts = {
     autoformat = true,
     formatters_by_ft = {
-      python = { "isort", "black" },
-      -- javascript = { "eslint_d" },
-      -- typescript = { "eslint_d" },
+      python = { "ruff_organize_imports", "ruff_format" },
+      odin = { "odinfmt" },
+      javascript = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
     },
   },
 }

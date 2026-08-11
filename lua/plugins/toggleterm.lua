@@ -1,8 +1,11 @@
 return {
-  "akinsho/toggleterm.nvim",
-  event = "VeryLazy",
-  opts = {
-    open_mapping = [[<M-3>]],
-    direction = "float",
+  {
+    "akinsho/toggleterm.nvim",
+    event = "VeryLazy",
+    opts = {
+      open_mapping = [[<M-/>]],
+      direction = "float",
+      auto_scroll = false,
+    },
   },
 }
